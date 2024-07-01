@@ -22,7 +22,7 @@ app.use(methodOverride("_method", {
     methods: ["POST", "GET"]
 }));
 app.use(cors({
-    origin: "https://busy-az-1a5a6a8ac879.herokuapp.com",
+    origin: "https://busy-az-client.onrender.com",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"]
 }));
