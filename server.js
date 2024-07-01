@@ -34,5 +34,8 @@ const checkRoute = require("./routes/checkRoute").router;
 const vacancyRoute = require("./routes/vacancyRoute").router;
 
 app.use("/api/user", requestNotify, userRoute);
-app.use("/api/check", requestNotify, checkRoute);
+app.use("/api/check", requestNotify, (req, res, next) => {
+    console.log("req.cookies :::::", req.cookies)
+    next();
+}, checkRoute);
 app.use("/api/vacancy", requestNotify, vacancyRoute);
