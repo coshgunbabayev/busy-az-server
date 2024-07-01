@@ -32,7 +32,7 @@ const authenticateToken = async (req, res, next) => {
             next();
         });
     } else {
-        console.log("User not found");
+        console.log("Token not found");
         res.status(400).json({
             success: false,
             message: "UserNotFound"

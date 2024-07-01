@@ -84,7 +84,9 @@ const loginUser = async (req, res) => {
         let token = await createTokenForLogin(user._id);
 
         res.cookie("jwt", token, {
-            httpOnly: true
+            httpOnly: true,
+            secure: true,
+            sameSite: 'None',
         });
 
         res.status(200).json({
