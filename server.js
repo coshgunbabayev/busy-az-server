@@ -22,20 +22,10 @@ app.use(methodOverride("_method", {
     methods: ["POST", "GET"]
 }));
 
-const allowedDomains = ["https://busy-az-client.onrender.com", "http://localhost:3000"];
-
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (allowedDomains.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+app.use(cors({
+  origin: "https://busy-az-client.onrender.com",
   credentials: true
-};
-
-app.use(cors(corsOptions));
+}));
 
 const { requestNotify } = require("./middlewares/notify")
 
