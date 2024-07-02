@@ -311,7 +311,11 @@ const getEmployerVacancies = async (req, res) => {
 };
 
 const logOutUser = (req, res) => {
-    res.clearCookie("jwt");
+    res.clearCookie("jwt", {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'None',
+    });
     res.status(200).json({ success: true });
 };
 
