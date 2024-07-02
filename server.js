@@ -24,6 +24,7 @@ app.use(methodOverride("_method", {
 
 app.use(cors({
   origin: "https://busy-az-client.onrender.com",
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 
