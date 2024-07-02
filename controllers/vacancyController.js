@@ -23,7 +23,7 @@ const deleteVacancy = async (req, res) => {
     let vacancy;
     try {
         vacancy = await Vacancy.findById(req.params.id)
-            .populate("user", "-password -_id");
+            .populate("user", "-password");
     } catch (err) {
         return res.status(400).json({
             success: false,
